@@ -1,0 +1,27 @@
+---
+title: "Typography as the Interface"
+description: "When the primary interaction pattern is reading, font choices are not aesthetic details—they are the user experience itself. Understanding scale, hierarchy, and tracking."
+date: "2026-06-18"
+author: "Elena Rostova"
+category: "Typography"
+featured: false
+---
+
+In a text-heavy application or blog, the typography is the user interface. Users do not look at buttons; they read the words on them. They do not interact with animations; they consume the content.
+
+## Font Scale and Weight
+
+The contrast between a bold sans-serif header and a classic serif body text creates immediate visual order. Using Lora or Newsreader for paragraphs ensures that the eye can glide effortlessly along lines without strain.
+
+Selecting appropriate line heights (usually around 1.6 to 1.8 for editorial reading) and keeping the maximum line length between 60 and 70 characters makes long-form text feel premium and highly legible.
+
+```typescript
+// Example typography configuration utility
+export const getTrackingClass = (fontSize: number) => {
+  if (fontSize >= 32) return "tracking-tight";
+  if (fontSize <= 12) return "tracking-wide";
+  return "tracking-normal";
+};
+```
+
+When typography works correctly, the visual interface recedes, and the ideas flow.

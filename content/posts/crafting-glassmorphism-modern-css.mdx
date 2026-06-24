@@ -1,0 +1,35 @@
+---
+title: "Crafting Glassmorphism in Modern CSS"
+description: "A deep dive into custom CSS variables, backdrop blurs, and border opacity settings that make web overlays feel physical and premium under different lighting modes."
+date: "2026-06-12"
+author: "Marcus Chen"
+category: "Engineering"
+featured: false
+---
+
+Glassmorphism is more than just a `backdrop-blur` utility class. It is a simulation of physical depth. To make glass feel real, it needs three components: a semi-transparent background color, a blur radius, and a subtle border that mimics light refraction.
+
+## CSS Custom Variables
+
+Using CSS variables like `--nav-bg` and `--border` allows us to smoothly transition between light and dark themes while maintaining the delicate transparency needed for the glass effect.
+
+```css
+/* Custom CSS Variables configuration in globals.css */
+:root {
+  --border: rgba(0, 0, 0, 0.06);
+  --nav-bg: rgba(255, 255, 255, 0.7);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border: rgba(255, 255, 255, 0.08);
+    --nav-bg: rgba(0, 0, 0, 0.7);
+  }
+}
+```
+
+Tailwind CSS v4 makes this easier by letting us define color styles directly inside `@theme inline` in `globals.css` and mapping them dynamically. This ensures that the interface remains readable under any theme environment.
+
+<Note>
+**Refraction Accent:**
+Adding a 1px solid border with dynamic opacity is the single most important detail to make glassmorphism look high-end rather than muddy.
+</Note>
