@@ -5,19 +5,13 @@ const TEAM_MEMBERS = [
     name: "Sanika Sadre",
     role: "Founder & Editor",
     initials: "SS",
-    bio: "Obsessed with editorial design, typography, and clean human-computer interfaces. Previously designing digital reading experiences.",
+    bio: "Obsessed with editorial design, typography, and clean human-computer interfaces. Co-creator of PageBlogs.",
   },
   {
-    name: "Elena Rostova",
-    role: "Visual Designer",
-    initials: "ER",
-    bio: "Focuses on type scale, layout grids, and spatial web layouts. Believes that minimalism is the ultimate form of sophistication.",
-  },
-  {
-    name: "Marcus Chen",
-    role: "Lead Engineer",
-    initials: "MC",
-    bio: "Specializes in design engineering, CSS animations, and building fast, accessible web platforms for long-form reading.",
+    name: "Gargi Harnaskar",
+    role: "Design Engineer",
+    initials: "GH",
+    bio: "Focuses on type systems, interactive layout structures, and building fast, accessible web platforms for writing.",
   }
 ];
 
@@ -37,13 +31,13 @@ export default function TeamPage() {
           The Team
         </h1>
         <p className="font-sans text-base text-muted max-w-md leading-relaxed">
-          The creators, designers, and engineers behind pageblogs.
+          The creators and designers behind pageblogs.
         </p>
       </section>
 
       {/* Team Grid */}
       <section className="border-t border-border-custom pt-12">
-        <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-12 sm:grid-cols-2 max-w-xl">
           {TEAM_MEMBERS.map((member, index) => (
             <div 
               key={index} 

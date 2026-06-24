@@ -20,6 +20,13 @@ create policy "Allow public read access"
   on public.posts for select
   using (true);
 
+-- Create policy to allow modification by authorized email only
+create policy "Allow modification by authorized author only"
+  on public.posts for all
+  to authenticated
+  using (auth.jwt() ->> 'email' = 'pagestudios5@gmail.com')
+  with check (auth.jwt() ->> 'email' = 'pagestudios5@gmail.com');
+
 -- Seed posts data
 insert into public.posts (title, slug, summary, content, category, author_name, reading_time)
 values 
