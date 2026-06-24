@@ -17,6 +17,12 @@ export default function Navbar() {
           >
             Team
           </Link>
+          <Link 
+            href="/admin" 
+            className="font-sans text-[13px] font-medium text-muted hover:text-foreground transition-colors duration-200"
+          >
+            Admin
+          </Link>
         </nav>
       </div>
     </header>
